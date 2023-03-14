@@ -1,15 +1,22 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import ListOfGifs from './components/ListOfGifs';
-
+import { Link, Route } from 'wouter';
 
 function App() {
   return (
-    <a href={`#${id}`} className="App">
+    <div  className="App">
       <section className="App-content">
-        <ListOfGifs keyword='panda'/>
+        <h1>App Giffy</h1>
+        <Link to='/gif/panda'>Gifs de pandas</Link>
+        <Link to='/gif/barcelona'>Gifs de Barcelona</Link> 
+        <Link to='/gif/argentina'>Gifs de Argentina</Link> 
+        <Route 
+          component={ListOfGifs}
+          path="/gif/:keyword"
+        />
       </section>
-    </a>
+    </div>
   );
 }
 
