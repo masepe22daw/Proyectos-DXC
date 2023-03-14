@@ -1,0 +1,16 @@
+{
+  "name": "nodejs-curso",
+  "version": "0.0.1",
+  "description": "curso de Node JS",
+  "main": "index.js",
+  "dependencies": {
+    "colors": "^1.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "desarrollo": "node index.js"
+  },
+  "author": "Marc Sedó Peirotén",
+  "license": "ISC"
+}
