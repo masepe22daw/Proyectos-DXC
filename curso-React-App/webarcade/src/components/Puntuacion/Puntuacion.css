@@ -1,0 +1,8 @@
+.puntuacion_container{
+    color: aqua;
+    display: flex;
+    justify-content: center;
+    font-size: large;
+    font-weight: bold;
+    
+}
