@@ -7,7 +7,7 @@ function App() {
   return (
     <div  className="App">
       <section className="App-content">
-        <h1>App Giffy</h1>
+        <h1>App Giffy :D</h1>
         <Link to='/gif/panda'>Gifs de pandas</Link>
         <Link to='/gif/barcelona'>Gifs de Barcelona</Link> 
         <Link to='/gif/argentina'>Gifs de Argentina</Link> 
