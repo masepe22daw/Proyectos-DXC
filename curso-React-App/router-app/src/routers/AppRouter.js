@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Redirect, Route, Switch } from "react-router-dom"
 import { Navbar } from "../components/Navbar"
 import AboutPage from "../pages/AboutPage"
-import CategoriesPage from "../pages/CategoriesPage"
 import ContactPage from "../pages/ContactPage"
 import { DashboardPage } from "../pages/DashboardPage"
 import HomePage from "../pages/HomePage"
@@ -10,32 +9,35 @@ import NotFoundPage from "../pages/NotFoundPage"
 import { PaymentsPage } from "../pages/PaymentsPage"
 import ProfilePage from "../pages/ProfilePage"
 import { RegisterPage } from "../pages/RegisterPage"
+import categoriesRouter from "./CategoriesRouter"
 import PrivateRoute from "./PrivateRoute"
+import PublicRoute from "./PublicRoute"
 
 const AppRouter = () => {
     return (
         <Router>
-            <Navbar/>
+            <Navbar />
             <Switch>
                 <Route exact path="/about" component={AboutPage} />
                 <Route exact path="/contact" component={ContactPage} />
                 <Route exact path="/" component={HomePage} />
 
                 <Route exact path="/profile/:username" component={ProfilePage} />
-                <Route exact path="/categories" component={CategoriesPage} />
-                
+
+                <Route path="/categories" component={categoriesRouter} />
+
                 <Route exact path="/signin"><Redirect to="/login" /></Route>
-                <Route exact path="/login" component={LoginPage} />
-                <Route exact path="/register" component={RegisterPage} />
-                
+                <PublicRoute exact path="/login" component={LoginPage} />
+                <PublicRoute exact path="/register" component={RegisterPage} />
+
                 <PrivateRoute exact path="/dashboard" component={DashboardPage} />
                 <PrivateRoute exact path="/payments" component={PaymentsPage} />
 
+                <Route path="404" component={NotFoundPage} />
+                <Route path="*">
+                    <Redirect to="/404" />
+                </Route>
 
-
-                <Route path="*" component={NotFoundPage} />
-
-                
             </Switch>
         </Router>
     )

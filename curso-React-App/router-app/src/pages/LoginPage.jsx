@@ -5,11 +5,13 @@ export default function LoginPage() {
   const auth = UseAuth();
   const history = useHistory();
   const location = useLocation();
+  const previusObjectUrl = location.state?.from
+  console.log(previusObjectUrl)
 
   const handleLogin = () => {
     auth.login();
-    history.push({pathname:"/dashboard"})
-    console.log(location)
+    history.push(previusObjectUrl || "/dashboard")
+    
   }
 
   return (
