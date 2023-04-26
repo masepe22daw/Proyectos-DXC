@@ -1,25 +1,25 @@
 .caja_puntos_container{
     display: flex;
+    width: 100%;
+    justify-content: center;
 
 }
 
 .caja_puntos_columna_1{
     display: flex;
     justify-content: center;
-    background-color: blue;
     width: 50px;
     align-items: center;
 }
 
 .caja_puntos_columna_2{
-    background-color: red;
     width: calc(100% - 100px);
+    max-width: 200px;
 }
 
 .caja_puntos_columna_3{
     display: flex;
     justify-content: center;
-    background-color: yellow;
     width: 50px;
     align-items: center;
 }

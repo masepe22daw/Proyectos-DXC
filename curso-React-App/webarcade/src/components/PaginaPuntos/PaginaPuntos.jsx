@@ -1,8 +1,10 @@
+import React from "react";
 import "./PaginaPuntos.css"
+import DefaultImage from "../DefaultImage/DefaultImage";
 
 const PaginaPuntos = (props) => {
-    const reverse = props.reverse ? "pagina_puntos_img_rotate" : "";
-    return <img className={"pagina_puntos_img " + reverse} src="img/avance-rapido.png"></img>
+    
+    return <DefaultImage reverse={props.reverse} src="/img/avance-rapido.png" alt="Botón para cargar más puntuaciones"  ></DefaultImage>
 }
 
 export default PaginaPuntos

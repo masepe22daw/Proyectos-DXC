@@ -2,6 +2,11 @@
     height: 40px;
     width: 40px;
     cursor: pointer;
+    filter: invert(100%)
+}
+
+.pagina_puntos_activa:hover{
+    filter: invert(100%) drop-shadow(2px 4px 6px black)
 }
 
 .pagina_puntos_img_rotate{

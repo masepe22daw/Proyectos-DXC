@@ -1,19 +1,26 @@
 import Titulo from "../../components/Titulo/Titulo"
 import CajaPuntos from "../../components/CajaPuntos/CajaPuntos"
-
+import Separador from "../../components/Separador/Separador"
+import Boton from "../../components/Boton/Boton"
+import { useNavigate } from "react-router-dom"
+import GameLayout from "../../components/Layouts/GameLayout"
 
 const PuntuacionPage = () => {
-    const style = {
-        backgroundColor: "gray",
-        height:"100%",
-        width:"100%"
+    
+    const navigate = useNavigate();
+    
+
+    const navigateToJuegoPage = () =>{
+        navigate("/juego")
     }
 
-    return <div style={style} className="puntuacion_page" >
-        <Titulo position="center" texto="React Arcade"></Titulo>
-        <CajaPuntos></CajaPuntos>
-    </div>
+    
 
+    return <GameLayout texto="Puntuación">
+         <CajaPuntos></CajaPuntos>
+        <Boton onClick={navigateToJuegoPage} texto={"Jugar"}></Boton>
+        <Separador size={5}></Separador>
+    </GameLayout>
 }
 
 export default PuntuacionPage

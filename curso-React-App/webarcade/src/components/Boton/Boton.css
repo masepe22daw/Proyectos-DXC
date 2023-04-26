@@ -1,0 +1,10 @@
+.boton{
+    background-color: white;
+    color: black;
+    height: 35px;
+    width: 150px;
+    cursor: pointer;
+    text-align: center;
+    font-size: x-large;
+
+}
