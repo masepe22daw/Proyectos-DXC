@@ -1,0 +1,22 @@
+.contenedor{
+    height: 60px;
+    background-color: blue;
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.imagen{
+    margin-top: 10px;
+    margin-left: 10px;
+    height: 30px;
+}
+
+.titulo{
+    color: white;
+    
+}
+
+.div-1, .div-2, .div-3{
+    width: 30%;
+}
