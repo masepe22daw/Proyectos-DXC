@@ -1,0 +1,13 @@
+.Boton{
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+    height: 10px;
+    border-color: blue;
+    text-decoration: underline;
+}
+
+.Boton:active{
+    background-color: white;
+    border-color: white;
+}

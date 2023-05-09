@@ -20,3 +20,14 @@
 .div-1, .div-2, .div-3{
     width: 30%;
 }
+
+.caja-abajo{
+    position: relative;
+    height: 100%;
+}
+
+.caja-abajo div{
+    position: absolute;
+    bottom: 0;
+    margin-right: 5px;
+}
