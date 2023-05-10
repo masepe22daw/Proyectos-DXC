@@ -1,13 +1,17 @@
 import "./Boton.css";
+const Boton = ({numero,width,height,texto,activo}) => {
+  
+  const handleClick = () => {
+    onclick(numero)
+  }
 
-const Boton = (props) => {
-  const {width, height} = props;
+  
   const buttonStyle = {
     width: width,
     height: height,
   }
   return (
-    <button style={buttonStyle} className="Boton">{props.texto}</button>
+    <button style={buttonStyle} className={activo ? 'activo' : ''} onClick={() => handleClick}>{texto}</button>
   )
 }
 

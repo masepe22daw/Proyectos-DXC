@@ -1,4 +1,4 @@
-.Boton{
+button{
     background-color: blue;
     color: white;
     border-radius: 5px;
@@ -7,7 +7,8 @@
     text-decoration: underline;
 }
 
-.Boton:active{
+button.activo{
     background-color: white;
     border-color: white;
+    color: blue;
 }

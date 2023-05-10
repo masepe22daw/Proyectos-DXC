@@ -22,12 +22,13 @@
 }
 
 .caja-abajo{
-    position: relative;
+    display: flex;
     height: 100%;
+    align-items: flex-end;
+    
 }
 
 .caja-abajo div{
-    position: absolute;
-    bottom: 0;
+    
     margin-right: 5px;
 }
