@@ -7,7 +7,7 @@ button{
     text-decoration: underline;
 }
 
-button.activo{
+button.focus{
     background-color: white;
     border-color: white;
     color: blue;

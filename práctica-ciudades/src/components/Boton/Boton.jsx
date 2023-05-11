@@ -1,9 +1,7 @@
 import "./Boton.css";
-const Boton = ({numero,width,height,texto,activo}) => {
+const Boton = ({onClick,width,height,texto}) => {
   
-  const handleClick = () => {
-    onclick(numero)
-  }
+ 
 
   
   const buttonStyle = {
@@ -11,7 +9,7 @@ const Boton = ({numero,width,height,texto,activo}) => {
     height: height,
   }
   return (
-    <button style={buttonStyle} className={activo ? 'activo' : ''} onClick={() => handleClick}>{texto}</button>
+    <button style={buttonStyle} onClick={onClick}>{texto}</button>
   )
 }
 
