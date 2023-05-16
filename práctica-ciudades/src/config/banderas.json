@@ -1,0 +1,78 @@
+{
+    "AR": {
+        "src": "/img/flags/bara.gif",
+        "alt": "Bandera de la comunidad autónoma de Aragón"
+    },
+    "AN": {
+        "src": "/img/flags/band.gif",
+        "alt": "Bandera de la comunidad autónoma de Andalucía"
+    },
+    "O": {
+        "src": "/img/flags/bast.gif",
+        "alt": "Bandera de la comunidad autónoma de Asturias"
+    },
+    "IB": {
+        "src": "/img/flags/bbal.gif",
+        "alt": "Bandera de la comunidad autónoma de Baleares"
+    },
+    "CN": {
+        "src": "/img/flags/bcnr-300x200.png",
+        "alt": "Bandera de la comunidad autónoma de Canarias"
+    },
+    "S": {
+        "src": "/img/flags/bcnt.gif",
+        "alt": "Bandera de la comunidad autónoma de Cantabria"
+    },
+    "CL": {
+        "src": "/img/flags/bcyl.gif",
+        "alt": "Bandera de la comunidad autónoma de Castilla y León"
+    },
+    "CM": {
+        "src": "/img/flags/bclm2.gif",
+        "alt": "Bandera de la comunidad autónoma de Castilla la Mancha"
+    },
+    "CT": {
+        "src": "/img/flags/bcat.gif",
+        "alt": "Bandera de la comunidad autónoma de Cataluña"
+    },
+    "VC": {
+        "src": "/img/flags/bval.gif",
+        "alt": "Bandera de la comunidad autónoma de Valencia"
+    },
+    "EX": {
+        "src": "/img/flags/bext.gif",
+        "alt": "Bandera de la comunidad autónoma de Extremadura"
+    },
+    "GA": {
+        "src": "/img/flags/bgal.gif",
+        "alt": "Bandera de la comunidad autónoma de Galicia"
+    },
+    "M": {
+        "src": "/img/flags/bmad.gif",
+        "alt": "Bandera de la comunidad autónoma de Madrid"
+    },
+    "MU": {
+        "src": "/img/flags/bmur.gif",
+        "alt": "Bandera de la comunidad autónoma de Murcia"
+    },
+    "NA": {
+        "src": "/img/flags/bnav.gif",
+        "alt": "Bandera de la comunidad autónoma de Navarra"
+    },
+    "PV": {
+        "src": "/img/flags/beus.gif",
+        "alt": "Bandera de la comunidad autónoma de País Vasco"
+    },
+    "LO": {
+        "src": "/img/flags/briojasin.png",
+        "alt": "Bandera de la comunidad autónoma de La Rioja"
+    },
+    "CE": {
+        "src": "/img/flags/bceu.gif",
+        "alt": "Bandera de la comunidad autónoma de Ceuta"
+    },
+    "ML": {
+        "src": "/img/flags/bmel.gif",
+        "alt": "Bandera de la comunidad autónoma de Melilla"
+    }
+}

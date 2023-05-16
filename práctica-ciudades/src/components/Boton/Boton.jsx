@@ -1,5 +1,5 @@
 import "./Boton.css";
-const Boton = ({onClick,width,height,texto}) => {
+const Boton = ({onClick,width,height,texto,type}) => {
   
  
 
@@ -9,8 +9,8 @@ const Boton = ({onClick,width,height,texto}) => {
     height: height,
   }
   return (
-    <button style={buttonStyle} onClick={onClick}>{texto}</button>
-  )
+    <button type={type} style={buttonStyle} className="boton" onClick={onClick}>{texto}</button>
+  ) 
 }
 
 export default Boton

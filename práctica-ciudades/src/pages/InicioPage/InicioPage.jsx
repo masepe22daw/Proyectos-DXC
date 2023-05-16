@@ -1,13 +1,15 @@
-import React from "react"
-import MenuSuperior from "../../components/MenuSuperior/MenuSuperior"
-import Contenido from "../../components/Contenido/Contenido"
+import React from 'react'
+
+import Buscador from '../../components/Buscador/Buscador';
 
 
 const InicioPage = () => {
-  return <>
-    <MenuSuperior></MenuSuperior>
-    <Contenido></Contenido>
-  </>
+  return (
+    <>
+    <Buscador></Buscador>
+    <div style={{marginLeft: "4%"}}>Por favor, introduce un código postal.</div>
+    </>
+  )
 }
 
-export default InicioPage
+export default InicioPage;

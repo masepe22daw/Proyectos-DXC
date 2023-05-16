@@ -1,29 +1,50 @@
+import React, { useState } from "react";
 import "./MenuSuperior.css";
-import Boton from "../Boton/Boton";
-import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-const MenuSuperior = () => {
-  const [activo, setActivo] = useState(1);
+export const MenuSuperior = () => {
+  const navigate = useNavigate();
+  const [fondoBuscar, setFondoBuscar] = useState(true);
+  const [fondoHistorial, setFondoHistorial] = useState(false);
 
-  const handleClick = (boton) => {
-    setActivo(boton)
-  }
+  const handleNavigate = (ruta, clickActivo, clickInactivo) => {
+    navigate(ruta);
+    clickActivo(true);
+    clickInactivo(false);
+  };
 
   return (
-    <div className="contenedor">
-      <div className="div-1"><img src="./img/miscalenea/logo.png" className="imagen" alt="Icono de una ciudad "></img></div>
-      <div className="div-2"><h1 className="titulo">Ciudades</h1></div>
-      <div className="div-3">
-        <div className="caja-abajo ">
-          <Boton numero={1} onClick={handleClick} activo={activo === 1} texto="Buscar" width="60px" height="25px"></Boton>
-          <Boton numero={2} onClick={handleClick} activo={activo === 2} texto="Historial" width="60px" height="25px"></Boton>
-        </div>
-
+    <div className="container">
+      <div className="izquierda">
+        <img src="/img/miscalenea/logo.png" alt="logo"></img>
       </div>
-    
-
+      <div className="centro">
+        <h1><b>Ciudades</b></h1>
+      </div>
+      <div className="derecha">
+        <div>
+          <label
+            className={fondoBuscar ? "activo" : "inactivo"}
+            onClick={() => {
+              handleNavigate("/", setFondoBuscar, setFondoHistorial);
+            }}
+          >
+            Buscar
+          </label>
+        </div>
+        <div>
+          <label
+            className={fondoHistorial ? "activo" : "inactivo"}
+            onClick={() => {
+              handleNavigate("historial", setFondoHistorial, setFondoBuscar);
+            }}
+            ruta=""
+          >
+            Historial
+          </label>
+        </div>
+      </div>
     </div>
-  )
-}
-
+  );
+};
 export default MenuSuperior
