@@ -1,5 +1,5 @@
 import React from 'react';
-import './Separador.css'; // 
+import './Separador.css'; 
 
 const Separador = () => {
   return (

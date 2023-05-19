@@ -1,9 +1,10 @@
 import React from "react";
-import  FetchOpenmeteo  from "../../services/FetchOpenmeteo";
 import "./InfoClima.css";
+import useOpenMeteoAPI from "../../services/useOpenMeteoAPI";
+
 
 const InfoClima = (props) => {
-  const { times, temperaturas, loading, error } = FetchOpenmeteo(
+  const { times } = useOpenMeteoAPI(
     props.latitud,
     props.longitud
   );
@@ -12,14 +13,14 @@ const InfoClima = (props) => {
     <div>
       {props.loading ? (
         <img src="/img/miscalenea/loading.gif" alt="cargando" />
-      ) : props.error ? (
-        <p>No hay resultados</p>
+      ) : props.error || !times ? (
+        <p>No va</p>
       ) : (
         <div className="global">
           <div className="mensajes">
             {times.map((hora, index) => (
               <p key={index}>
-                {hora.slice(11)} ({temperaturas[index]} Cº)
+                {hora.slice(11)} ({props.temperatures[index]} Cº)
               </p>
             ))}
           </div>

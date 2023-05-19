@@ -1,12 +1,12 @@
 import React from "react";
-import "./BuscarPage.css"
-import  Buscador  from "../../components/Buscador/Buscador";
 import { useParams } from "react-router-dom";
+import Buscador from "../../components/Buscador/Buscador";
 import Card from "../../components/Card/Card";
-import  FetchZipopotam  from "../../services/FetchZippopotam";
-import  InfoGeografica  from "../../components/InfoGeografica/InfoGeografica";
-import  InfoClima  from "../../components/InfoClima/InfoClima";
-import  InfoPolitica  from "../../components/InfoPolitica/InfoPolitica";
+import InfoGeografica from "../../components/InfoGeografica/InfoGeografica";
+import InfoClima from "../../components/InfoClima/InfoClima";
+import InfoPolitica from "../../components/InfoPolitica/InfoPolitica";
+import "./BuscarPage.css";
+import useZipopotamAPI from "../../services/useZipopotamAPI";
 
 
 const BuscarPage = () => {
@@ -19,14 +19,24 @@ const BuscarPage = () => {
     error,
     longitud,
     latitud,
-  } = FetchZipopotam(ciudad);
+  } = useZipopotamAPI(ciudad);
+
+  // Verificar si los datos se han cargado antes de renderizar las Card
+  if (loading) {
+    return (
+      <div>
+        <Buscador></Buscador>
+        <p className="loading-message">Cargando...</p>
+      </div>
+    );
+  }
 
   return (
     <div>
-      <Buscador loading={loading}></Buscador>
+      <Buscador></Buscador>
 
       {error ? (
-        <p style={{ color: "red", marginLeft: "4%"}}>Sin resultados</p>
+        <p className="error-message">Sin resultados</p>
       ) : (
         <>
           <Card title="Información política">
@@ -37,7 +47,7 @@ const BuscarPage = () => {
               error={error}
               loading={loading}
             ></InfoPolitica>
-          </Card>
+          </Card><br></br>
           <Card title="Información climática">
             <InfoClima
               latitud={latitud}
@@ -45,7 +55,7 @@ const BuscarPage = () => {
               loading={loading}
               error={error}
             ></InfoClima>
-          </Card>
+          </Card><br></br>
           <Card title="Información geográfica">
             <InfoGeografica
               latitud={latitud}

@@ -9,10 +9,11 @@ const InfoGeografica = (props) => {
   return (
     <div>
       {
-        props.loading ? (<img src="/img/miscalenea/loading.gif" alt="cargando" />) : props.error ? (<p>No hay resultados</p>)
+        props.loading ? (<img src="/img/miscalenea/loading.gif" alt="cargando" />) : props.error ? (<p>No va</p>)
         : (
           <div className="contenedor-geografico">
           <div>
+            <br></br>
         <p>
           <b>Latitud: </b>
           {props.latitud}

@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import InicioPage from "./pages/InicioPage/InicioPage";
-import { HistorialPage } from "./pages/HistorialPage/HistorialPage";
+import  HistorialPage  from "./pages/HistorialPage/HistorialPage";
 
 import { HistoryContextProvider } from "./context/HistoryContext";
 import  BuscarPage  from "./pages/BuscarPage/BuscarPage";

@@ -1,6 +1,6 @@
 import "./InfoPolitica.css";
 import banderas from "../../config/banderas.json";
-import InfoGeografica from "../InfoGeografica/InfoGeografica";
+
 
 const InfoPolitica = (props) => {
   return (
@@ -11,6 +11,7 @@ const InfoPolitica = (props) => {
         <p>No hay resultados</p>
       ) : (
         <div className="container-politico">
+          <br></br>
           <img
             alt={banderas[props.comunidadAbr].alt}
             src={banderas[props.comunidadAbr].src}

@@ -3,6 +3,11 @@ import { useNavigate } from "react-router-dom";
 import "./Buscador.css";
 import Boton from "../Boton/Boton";
 
+
+
+
+
+
  const Buscador = (props) => {
   const [busqueda, setBusqueda] = useState("");
   const [mensajeError, setMensajeError] = useState();
@@ -16,14 +21,16 @@ import Boton from "../Boton/Boton";
   const handleBusqueda = (evt) => {
     evt.preventDefault();
     if (busqueda === "") {
-      setMensajeError("Se debe introducir un código postal");
+      setMensajeError("Se ha de introducir un código postal");
     } else if (isNaN(busqueda)) {
-      setMensajeError("El código postal debe ser numérico");
+      setMensajeError("El código postal ha de ser numérico");
     } else if (busqueda.length !== 5) {
-      setMensajeError("El código postal debe tener almenos 5 dígitos");
+      setMensajeError("El código postal ha de  tener almenos 5 dígitos");
     } else {
       setMensajeError("");
       navigate("/buscar/" + busqueda);
+      
+
     }
 
     
@@ -33,11 +40,11 @@ import Boton from "../Boton/Boton";
     <div className="container-buscador">
       <form onSubmit={handleBusqueda}>
         <input
-          placeholder="Introduce código postal: 08922"
+          placeholder="Introduce código postal: 08041"
           type="text"
           onChange={handleInput}
         ></input>
-        {!props.loading ? <Boton texto="Buscar" width="60px" height="25px" type="submit" ></Boton> : ""}
+         <Boton texto="Buscar" width="60px" height="25px" type="submit" ></Boton>
       </form>
       <p className="error">{mensajeError}</p>
     </div>
