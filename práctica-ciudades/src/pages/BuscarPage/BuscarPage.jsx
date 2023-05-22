@@ -36,7 +36,7 @@ const BuscarPage = () => {
       <Buscador></Buscador>
 
       {error ? (
-        <p className="error-message">Sin resultados</p>
+        <p className="error-message"> No hay resultados</p>
       ) : (
         <>
           <Card title="Información política">

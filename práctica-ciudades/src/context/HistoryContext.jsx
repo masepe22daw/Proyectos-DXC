@@ -1,14 +1,17 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 
-const Context = React.createContext({});
+export const HistoryContext = createContext();
 
-export const HistoryContextProvider = ({ children }) => {
+export const HistoryProvider = ({ children }) => {
   const [history, setHistory] = useState([]);
+
+  const addToHistory = (item) => {
+    setHistory((prevHistory) => [...prevHistory, item]);
+  };
+
   return (
-    <Context.Provider value={{ history, setHistory }}>
+    <HistoryContext.Provider value={{ history, addToHistory }}>
       {children}
-    </Context.Provider>
+    </HistoryContext.Provider>
   );
 };
-
-export default Context;

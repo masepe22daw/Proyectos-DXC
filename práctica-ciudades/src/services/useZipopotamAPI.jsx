@@ -10,6 +10,11 @@ const useZipopotamAPI = (codigoPostal) => {
   const [latitud, setLatitud] = useState('');
   const [historial, setHistorial] = useState([]);
 
+
+  const addToHistory = (codigoPostal, ciudad) => {
+    setHistorial(prevHistorial => [...prevHistorial, { codigoPostal, ciudad }]);
+  };
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
@@ -24,8 +29,7 @@ const useZipopotamAPI = (codigoPostal) => {
         setLongitud(jsonData.places[0].longitude);
         setLatitud(jsonData.places[0].latitude);
 
-        // Añadir el código postal consultado al historial
-        setHistorial(prevHistorial => [...prevHistorial, codigoPostal]);
+        addToHistory(codigoPostal, jsonData.places[0]['place name'])
       } catch (error) {
         setError(error);
       }
@@ -38,7 +42,7 @@ const useZipopotamAPI = (codigoPostal) => {
     }
   }, [codigoPostal]);
 
-  return { nombreCiudad, comunidad, comunidadAbr, loading, error, longitud, latitud, historial };
+  return { nombreCiudad, comunidad, comunidadAbr, loading, error, longitud, latitud,addToHistory  };
 };
 
 export default useZipopotamAPI;

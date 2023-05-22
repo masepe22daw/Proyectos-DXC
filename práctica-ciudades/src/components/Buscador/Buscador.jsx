@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Buscador.css";
 import Boton from "../Boton/Boton";
-
-
-
+import { HistoryContext } from "../../context/HistoryContext";
 
 
 
@@ -12,6 +10,7 @@ import Boton from "../Boton/Boton";
   const [busqueda, setBusqueda] = useState("");
   const [mensajeError, setMensajeError] = useState();
   const navigate = useNavigate();
+  const { addToHistory } = useContext(HistoryContext);
 
   const handleInput = (e) => {
     setBusqueda(e.target.value);
@@ -28,6 +27,7 @@ import Boton from "../Boton/Boton";
       setMensajeError("El código postal ha de  tener almenos 5 dígitos");
     } else {
       setMensajeError("");
+      addToHistory(busqueda);
       navigate("/buscar/" + busqueda);
       
 
