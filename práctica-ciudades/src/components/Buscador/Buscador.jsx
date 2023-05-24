@@ -6,7 +6,7 @@ import { HistoryContext } from "../../context/HistoryContext";
 
 
 
- const Buscador = (props) => {
+ const Buscador = () => {
   const [busqueda, setBusqueda] = useState("");
   const [mensajeError, setMensajeError] = useState();
   const navigate = useNavigate();

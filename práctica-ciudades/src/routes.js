@@ -25,7 +25,7 @@ const AppRouter = () => {
                     <Route exact path="/historial" element={<HistorialPage />}></Route>
                     <Route path="*" element={
 
-                        <Suspense fallback={<div>Loading...</div>}>
+                        <Suspense fallback={<div>Cargando...</div>}>
 
                             <ErrorPage></ErrorPage>;
 

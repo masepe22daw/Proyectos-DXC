@@ -1,48 +1,30 @@
-import React, { useState } from "react";
 import "./MenuSuperior.css";
 import { useNavigate } from "react-router-dom";
+import Boton from "../Boton/Boton";
 
 export const MenuSuperior = () => {
   const navigate = useNavigate();
-  const [fondoBuscar, setFondoBuscar] = useState(true);
-  const [fondoHistorial, setFondoHistorial] = useState(false);
 
-  const handleNavigate = (ruta, clickActivo, clickInactivo) => {
+
+  const handleNavigate = (ruta) => {
     navigate(ruta);
-    clickActivo(true);
-    clickInactivo(false);
   };
 
+
   return (
-    <div className="container">
-      <div className="izquierda">
-        <img src="/img/miscalenea/logo.png" alt="logo"></img>
-      </div>
-      <div className="centro">
-        <h1><b>Ciudades</b></h1>
-      </div>
-      <div className="derecha">
-        <div>
-          <label
-            className={fondoBuscar ? "activo" : "inactivo"}
-            onClick={() => {
-              handleNavigate("/", setFondoBuscar, setFondoHistorial);
-            }}
-          >
-            Buscar
-          </label>
-        </div>
-        <div>
-          <label
-            className={fondoHistorial ? "activo" : "inactivo"}
-            onClick={() => {
-              handleNavigate("historial", setFondoHistorial, setFondoBuscar);
-            }}
-            ruta=""
-          >
-            Historial
-          </label>
-        </div>
+    <div className="contenedor">
+      <div className="div-1"><img src="./img/miscalenea/logo.png" className="imagen" alt="Logo de la aplicacion(ciudad) "></img></div>
+      <div className="div-2"><h1 className="titulo">Ciudades</h1></div>
+      <div className="div-3">
+        <Boton
+          onClick={() => {
+            handleNavigate("/");
+          }} texto="Buscar" width="60px" height="25px"></Boton>
+        <Boton 
+          onClick={() => {
+            handleNavigate("historial");
+          }}
+          texto="Historial" width="60px" height="25px" ></Boton>
       </div>
     </div>
   );
