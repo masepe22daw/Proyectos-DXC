@@ -1,3 +1,4 @@
+import React from "react";
 import "./Boton.css";
 const Boton = ({ onClick, width, height, texto, type }) => {
 

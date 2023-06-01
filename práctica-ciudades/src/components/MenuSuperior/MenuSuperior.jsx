@@ -1,6 +1,7 @@
 import "./MenuSuperior.css";
 import { useNavigate } from "react-router-dom";
 import Boton from "../Boton/Boton";
+import React from "react";
 
 export const MenuSuperior = () => {
   const navigate = useNavigate();
